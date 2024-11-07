@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-type Roles = "Unknown Personnel"| "Guest"| "Student" | "Developer" | "Executive Personnel";
+// type Roles = ["Unknown Personnel" , "Guest" , "Student" , "Developer" , "Executive Personnel"]
+import optionalroles from "../../../data/roles.json";
+
 interface IRoleState {
-    currentRole: Roles
+    currentRole: string
 }
 
 const initialState: IRoleState = {
-    currentRole: "Unknown Personnel"
+    currentRole: optionalroles[0]
 
 }
 
@@ -14,7 +16,7 @@ const RoleSlice = createSlice({
     initialState,
     reducers: {
         setRole: (state, action) => {
-
+            state.currentRole = optionalroles[action.payload]
         }
     }
 })

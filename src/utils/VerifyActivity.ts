@@ -6,7 +6,8 @@ interface IuseActivityParams {
   activities: string[];
 }
 
-const useIsVerified = ({ activity, role, activities }: IuseActivityParams) => {
+const useIsVerified = ({ activity, role, activities }: IuseActivityParams) : boolean => {
+  return false
   //FILL HERE 3.7
 };
 

@@ -5,22 +5,26 @@ import { setRole } from "../../store/features/Role/RoleSlice";
 import useBuildingData from "../../utils/BuildingDataProvider";
 import optionalroles from "../../data/roles.json";
 import "./Reception.css";
+import { RootState } from "../../store/store";
 
 const Reception: React.FC = () => {
   const floorAccess = useSelector(
     (state: { floorAccess: { floorAccess: [boolean, boolean, boolean, boolean, boolean] } }) => state.floorAccess.floorAccess
   );
-  const currentRole = useSelector((state: { role: string }) => state.role);
+  const currentRole = useSelector((state:RootState) => state.role.currentRole);
+  
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
-
+  
   const handleChangeAccess = (index: number) => {
     dispatch(changeAccess(index));
   };
-
+  
   const handleSetRole = (index: number) => {
     dispatch(setRole(index));
   };
+  console.log(typeof currentRole);
+  // optionalroles.map((role: string, index: number) => console.log(role === currentRole, role, currentRole));
 
   return (
     <div className="reception-page">
@@ -52,7 +56,7 @@ const Reception: React.FC = () => {
         {optionalroles.map((role: string, index: number) => (
           <div
             key={index}
-            onClick={() => handleSetRole(index)}
+            onClick={() => handleSetRole(index)}            
             className={`box ${role === currentRole ? "blue" : "red"}`}
             role="button"
             tabIndex={0}
