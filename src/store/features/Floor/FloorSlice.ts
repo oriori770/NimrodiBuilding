@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+    import { createSlice } from "@reduxjs/toolkit";
 interface IFloorState {
     floorAccess: [boolean, boolean, boolean, boolean, boolean];
     

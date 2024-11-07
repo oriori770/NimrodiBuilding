@@ -21,6 +21,8 @@ const Reception: React.FC = () => {
   };
   
   const handleSetRole = (index: number) => {
+    console.log(index);
+    
     dispatch(setRole(index));
   };
   return (
