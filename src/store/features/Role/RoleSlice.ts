@@ -6,18 +6,14 @@ import optionalroles from "../../../data/roles.json";
 //     currentRole: string
 // }
 
-const initialState: string = "Guest"// optionalroles[0]
+const initialState: string = optionalroles[0]
 
 const RoleSlice = createSlice({
     name: 'Role',
     initialState,
     reducers: {
         setRole: (state, action) => {
-            console.log("action.payload",action.payload);
-            console.log("state before",state);
-            // state = "Student"//optionalroles[action.payload]    
-            console.log("after", state); 
-            return true
+            return optionalroles[action.payload]
         }
     }
 })

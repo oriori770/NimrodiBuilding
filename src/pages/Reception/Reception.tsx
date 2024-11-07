@@ -20,9 +20,7 @@ const Reception: React.FC = () => {
     dispatch(changeAccess(index));
   };
   
-  const handleSetRole = (index: number) => {
-    console.log(index);
-    
+  const handleSetRole = (index: number) => {    
     dispatch(setRole(index));
   };
   return (
