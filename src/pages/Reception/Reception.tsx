@@ -11,7 +11,7 @@ const Reception: React.FC = () => {
   const floorAccess = useSelector(
     (state: { floorAccess: { floorAccess: [boolean, boolean, boolean, boolean, boolean] } }) => state.floorAccess.floorAccess
   );
-  const currentRole = useSelector((state:RootState) => state.role.currentRole);
+  const currentRole = useSelector((state:RootState) => state.role);
   
   const { getFloorByIndex } = useBuildingData();
   const dispatch = useDispatch();
@@ -23,9 +23,6 @@ const Reception: React.FC = () => {
   const handleSetRole = (index: number) => {
     dispatch(setRole(index));
   };
-  console.log(typeof currentRole);
-  // optionalroles.map((role: string, index: number) => console.log(role === currentRole, role, currentRole));
-
   return (
     <div className="reception-page">
       <header className="reception-header">

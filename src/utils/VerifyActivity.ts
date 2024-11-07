@@ -7,8 +7,14 @@ interface IuseActivityParams {
 }
 
 const useIsVerified = ({ activity, role, activities }: IuseActivityParams) : boolean => {
-  return false
-  //FILL HERE 3.7
+  const roleIndex = roles.indexOf(role);
+  const activityIndex = activities.indexOf(activity);
+  console.log(roleIndex,"=", " roleIndex, ", activityIndex, "=", "activityIndex");
+  
+  if (roleIndex !== -1 && activityIndex !== -1) {
+    return roleIndex >= activityIndex;
+  }
+  else return false
 };
 
 export default useIsVerified;
