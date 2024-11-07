@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-// type Roles = "Unknown Personnel" | "Guest" , "Student" , "Developer" , "Executive Personnel"
-import optionalroles from "../../../data/roles.json";
-
-// interface IRoleState {
-//     currentRole: string
-// }
+type Roles = "Unknown Personnel" | "Guest" | "Student" | "Developer" | "Executive Personnel"
+const optionalroles: Roles[] = ["Unknown Personnel" , "Guest" , "Student" , "Developer" , "Executive Personnel"]
+// import optionalroles from "../../../data/roles.json" assert { type: "json" }
 
 const initialState: string = optionalroles[0]
 
