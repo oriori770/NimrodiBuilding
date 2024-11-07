@@ -16,7 +16,7 @@ const PrivateRoute = ({ component}:IPrivateRoute) => {
         }) => state.floorAccess.floorAccess
     );
     const {floorIndex} = useParams();
-    const allowedToEnter:boolean = floorAccess[parseInt(floorIndex || "0")];
+    const allowedToEnter:boolean = floorAccess[parseInt(floorIndex || "0")];//
     return allowedToEnter ? component : <Navigate to="/Forbidden"/>;
 
 };
